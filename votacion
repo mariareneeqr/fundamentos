@@ -1,0 +1,17 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+void main()
+
+{
+   int edad;
+   cout<<"ingresa la edad";
+   cin>> edad;
+   if (edad>=18)
+      cout<<"si vota";
+   else
+	   cout<<"no vota";
+   getch();
+}
