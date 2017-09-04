@@ -1,0 +1,20 @@
+#include "stdafx.h"
+#include<iostream>
+#include"conio.h"
+
+using namespace std;
+
+void main()
+{
+    float num1,num2,num3,promedio;
+	cout<<"ingrese num1";
+    cin>> num1;
+	cout<<"ingrese num2";
+	cin>> num2;
+	cout<<"ingrese num3";
+	cin>> num3;
+	promedio=(num1+num2+num3)/3;
+	cout<<"el promedio:" << promedio<<endl;
+	getch;
+}
+
