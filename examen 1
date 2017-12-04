@@ -1,0 +1,33 @@
+#include "stdafx.h"
+#include <iostream>
+#include  "conio.h"
+
+int multiplo(int x, int y);
+using namespace std;
+void main() {
+    int x, y;
+    bool flag;
+    cout<<"Ingrese dos numeros naturales: ";
+    cin>>x>>y;
+    flag=multiplo(x, y);
+    if (flag=true)
+        cout<<"Es multiplo";
+    else
+        cout<<"No es multiplo";
+    getch();
+}
+int multiplo(int x, int y){
+    bool flag;
+    if (x>y){
+        if (x%y==0)
+            flag=true;
+        else
+            flag=false;
+    }
+    else
+        if (y%x==0)
+            flag=true;
+        else
+            flag=false;
+return flag;
+}
