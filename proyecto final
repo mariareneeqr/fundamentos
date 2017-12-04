@@ -1,0 +1,34 @@
+#define trigPin 11
+#define echoPin 10
+    
+     int buzzerPin = 7;
+     int numTones = 10;
+  
+
+     void setup()
+        {   Serial.begin (9600);
+            pinMode(trigPin, OUTPUT);
+            pinMode(echoPin, INPUT);
+            pinMode (buzzerPin, OUTPUT);     
+        }
+
+     void loop()
+        {   long duracion, distancia ;
+            digitalWrite(trigPin, LOW);        // Nos aseguramos de que el trigger está desactivado
+            delayMicroseconds(2);              // Para asegurarnos de que el trigger esta LOW
+            digitalWrite(trigPin, HIGH);       // Activamos el pulso de salida
+            delayMicroseconds(10);             // Esperamos 10µs. El pulso sigue active este tiempo
+            digitalWrite(trigPin, LOW);        // Cortamos el pulso y a esperar el echo
+            duracion = pulseIn(echoPin, HIGH) ;
+            distancia = duracion / 2 / 29.1  ;
+            Serial.println(String(distancia) + " cm.") ;
+  
+                if (distancia < 10){
+                  tone (buzzerPin, 400);
+                  delay (700);
+                }
+                else {
+              noTone(buzzerPin);
+              } 
+
+          } 
